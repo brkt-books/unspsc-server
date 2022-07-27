@@ -8,4 +8,4 @@ COPY unspsc.json data.json
 
 EXPOSE 8080
 
-CMD ["json-server", "--ro", "-p8080", "data.json"]
+CMD ["json-server", "--ro", "-p8080", "-H0", "data.json"]
