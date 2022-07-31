@@ -1,11 +1,11 @@
 FROM node:lts-alpine
 
-WORKDIR /ws
+WORKDIR /
 
 RUN npm i -g json-server
 
-COPY unspsc.json data.json
+ADD unspsc.json.tar.xz data/
 
 EXPOSE 8080
 
-CMD ["json-server", "--ro", "-p8080", "-H0", "data.json"]
+CMD ["json-server", "--ro", "-p8080", "-H0", "data/unspsc.json"]
